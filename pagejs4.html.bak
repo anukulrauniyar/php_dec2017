@@ -1,0 +1,8 @@
+<html>
+<body>
+<img src="offbulb.jpg" height="100" width="100" id="bulb">
+<input type="button" value="On" onclick="getElementById('bulb').src='onbulb.jpg';">
+<input type="button" value="Off" align="right">
+
+</body>
+</html>

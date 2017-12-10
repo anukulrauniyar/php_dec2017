@@ -1,0 +1,78 @@
+<html>
+<head>
+<script>
+	function puzzle(v)
+	{
+	  if(v==1)
+	  {
+		if(f.b2.value==" ")
+		{
+			f.b2.value=f.b1.value;
+			f.b1.value=" ";
+		}
+		if(f.b3.value==" ")
+		{
+			f.b3.value=f.b1.value;
+			f.b1.value=" ";
+		}
+	  }
+	  else if(v==2)
+	  {
+		if(f.b1.value==" ")
+		{
+			f.b1.value=f.b2.value;
+			f.b2.value=" ";
+		}
+		if(f.b4.value==" ")
+		{
+			f.b4.value=f.b2.value;
+			f.b2.value=" ";
+		}
+	  }
+	    else if(v==3)
+	  {
+		if(f.b1.value==" ")
+		{
+			f.b1.value=f.b3.value;
+			f.b3.value=" ";
+		}
+		if(f.b4.value==" ")
+		{
+			f.b4.value=f.b3.value;
+			f.b3.value=" ";
+		}
+	  }
+	    else if(v==4)
+	  {
+		if(f.b2.value==" ")
+		{
+			f.b2.value=f.b4.value;
+			f.b4.value=" ";
+		}
+		if(f.b3.value==" ")
+		{
+			f.b3.value=f.b4.value;
+			f.b4.value=" ";
+		}
+	  }
+	}
+</script>
+</head>
+<body>
+<form name="f">
+<table>
+<tr>
+<td><input style="width:24px;" type="button" value="1" name="b1" onclick="puzzle(1)" /></td>
+<td>
+<input name="b2" style="width:24px;" type="button" value="2" onclick="puzzle(2)"/></td>
+</tr>
+<tr>
+<td>
+<input style="width:24px;" type="button" value="3" name="b3" onclick="puzzle(3)"/></td>
+<td>
+<input style="width:24px;" type="button" value=" " name="b4" onclick="puzzle(4)"/></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

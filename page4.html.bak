@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="a.css"/>
+	<!--
+	<style>
+	.myhead
+	{
+	font-family:'Algerian';
+	color:'ff00ff';
+	}
+	#sub
+	{
+	color:'ff00ff';
+	font-size:32px;
+	}
+	</style>
+	-->
+</head>
+<body>
+<!-- inline css-->
+<p style="font-family:'Algerian';color:'ff0000'">NIIT SAPRUMARG</P>
+<p id="sub">6b sas house</p>
+<p class="myhead">saprumarg</p>
+</body>
+</html>

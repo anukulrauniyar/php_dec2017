@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script>
+		function show()
+		{
+			var a=parseInt(f.n1.value);
+			document.write("<table border='1'><thead><tr><th>Table</th></tr></thead><tbody>");
+			for(var i=1;i<=10;++i)
+			{
+				document.write("<tr>");
+				document.write("<td>"+a*i+"</td>");
+				document.write("</tr>");
+
+			}
+			document.write("</tbody></table>");
+		}
+		</script>
+	</head>
+<body>
+<form name="f">
+ENTER A NUMBER<INPUT TYPE="text" name="n1"/><br/>
+<INPUT TYPE="button" value="Print" onclick="show()"/><br/>
+</form>
+</body>
+</html>
