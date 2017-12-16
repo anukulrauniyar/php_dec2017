@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script>
+var h=0,m=0,s=0,t=0,x;
+	function show()
+	{
+		if(s>59)
+			{
+				m=m+1;
+				s=0;
+			}
+		if(m>59)
+			{
+				h=h+1;
+				m=0;
+			}
+	  document.getElementById("time").innerHTML=h+":"+m+":"+s;	
+		s=s+1;
+	}
+	function puzzle_me()
+	{
+		var number=Array();
+		var count=0,v=0,n=0,t=0;
+		var flag=true;
+		for(;;)
+			{
+				 v=(Math.floor(Math.random()*15))+1;
+				 for(n=0;n<15;n++)
+					 {
+						 if(number[n]==v)
+							 {
+								flag=false;	
+								 break;
+							 }
+					 }
+				if(flag==true)
+					{
+						number[count]=v;
+						count=count+1;
+					
+					}
+				flag=true;
+				if(count==15)
+					break;
+					
+			}
+/*		f.b1.value=number[0];
+		f.b2.value=number[1];
+		f.b3.value=number[2];
+		f.b4.value=number[3];
+		
+		f.b5.value=number[4];
+		f.b6.value=number[5];
+		f.b7.value=number[6];
+		f.b8.value=number[7];
+		
+		f.b9.value=number[8];
+		f.b10.value=number[9];
+		f.b11.value=number[10];
+		f.b12.value=number[11];
+		
+		f.b13.value=number[12];
+		f.b14.value=number[13];
+		f.b15.value=number[14];
+		f.b16.value=" ";
+*/		
+				var b=document.getElementById("f").elements;
+		
+		 for(n=0;n<15;++n)
+					 {
+					   b[n].value=number[n];	 
+					 }
+		f.b16.value=" ";
+f.puz.disabled=true;	
+	t=setInterval("show()",100);
+
+	}
+  function cube(v)
+  {
+  if(v==1)
+  {
+  if(f.b2.value==" ")
+  {
+    f.b2.value=f.b1.value;
+	f.b1.value=" ";
+  }  
+  if(f.b5.value==" ")
+  {
+	  f.b5.value=f.b1.value;
+	  f.b1.value=" ";
+  }
+  }
+  else if(v==2){
+   if(f.b1.value==" ")
+   {
+	   f.b1.value=f.b2.value;
+	   f.b2.value=" ";
+	   }
+	   if(f.b3.value==" ")
+	   {
+		   f.b3.value=f.b2.value;
+		   f.b2.value=" ";
+		   }
+		   if(f.b6.value==" ")
+		   {
+			   f.b6.value=f.b2.value;
+			   f.b2.value=" ";
+		   }
+	   
+  }
+  else if(v==3){
+   if(f.b2.value==" ")
+   {
+	   f.b2.value=f.b3.value;
+	   f.b3.value=" ";
+	   }
+	   if(f.b4.value==" ")
+	   {
+		   f.b4.value=f.b3.value;
+		   f.b3.value=" ";
+		   }
+		   if(f.b7.value==" ")
+		   {
+			   f.b7.value=f.b3.value;
+			   f.b3.value=" ";
+		   }
+  }
+  else if(v==4){
+	  if(f.b3.value==" ")
+	  {
+		  f.b3.value=f.b4.value;
+		  f.b4.value=" ";
+	  }
+	  if(f.b8.value==" ")
+	  {
+		  f.b8.value=f.b4.value;
+		  f.b4.value=" ";
+	  }
+	}
+	else if(v==5){
+	if(f.b1.value==" ")
+	{
+		f.b1.value=f.b5.value;
+		f.b5.value=" ";
+	}
+	if(f.b6.value==" ")
+	{
+		f.b6.value=f.b5.value;
+		f.b5.value=" ";
+	}
+	if(f.b9.value==" "){
+      f.b9.value=f.b5.value;
+	  f.b5.value=" ";
+  }
+}
+else if(v==6){
+	if(f.b2.value==" ")
+	{
+		f.b2.value=f.b6.value;
+		f.b6.value=" ";
+	}
+	if(f.b5.value==" ")
+	{
+		f.b5.value=f.b6.value;
+		f.b6.value=" ";
+	}
+	if(f.b7.value==" "){
+      f.b7.value=f.b6.value;
+	  f.b6.value=" ";
+  }
+    if(f.b10.value==" ")
+  {
+	  f.b10.value=f.b6.value;
+	  f.b6.value=" ";
+	  }
+}
+else if(v==7){
+	if(f.b3.value==" ")
+	{
+		f.b3.value=f.b7.value;
+		f.b7.value=" ";
+	}
+	if(f.b6.value==" ")
+	{
+		f.b6.value=f.b7.value;
+		f.b7.value=" ";
+	}
+	if(f.b8.value==" "){
+      f.b8.value=f.b7.value;
+	  f.b7.value=" ";
+  }
+    if(f.b11.value==" ")
+  {
+	  f.b11.value=f.b7.value;
+	  f.b7.value=" ";
+	  }
+}
+else if(v==8){
+	if(f.b4.value==" ")
+	{
+		f.b4.value=f.b8.value;
+		f.b8.value=" ";
+	}
+	if(f.b7.value==" ")
+	{
+		f.b7.value=f.b8.value;
+		f.b8.value=" ";
+	}
+	if(f.b12.value==" "){
+      f.b12.value=f.b8.value;
+	  f.b8.value=" ";
+  }
+}	
+else if(v==9){
+	if(f.b5.value==" ")
+	{
+		f.b5.value=f.b9.value;
+		f.b9.value=" ";
+	}
+	if(f.b10.value==" ")
+	{
+		f.b10.value=f.b9.value;
+		f.b9.value=" ";
+	}
+	if(f.b13.value==" "){
+      f.b13.value=f.b9.value;
+	  f.b9.value=" ";
+  }
+
+}
+else if(v==10){
+	if(f.b6.value==" ")
+	{
+		f.b6.value=f.b10.value;
+		f.b10.value=" ";
+	}
+	if(f.b14.value==" ")
+	{
+		f.b14.value=f.b10.value;
+		f.b10.value=" ";
+	}
+	if(f.b11.value==" "){
+      f.b11.value=f.b10.value;
+	  f.b10.value=" ";
+  }
+    if(f.b9.value==" ")
+  {
+	  f.b9.value=f.b10.value;
+	  f.b10.value=" ";
+	  }
+}
+else if(v==11){
+	if(f.b7.value==" ")
+	{
+		f.b7.value=f.b11.value;
+		f.b11.value=" ";
+	}
+	if(f.b15.value==" ")
+	{
+		f.b15.value=f.b11.value;
+		f.b11.value=" ";
+	}
+	if(f.b10.value==" "){
+      f.b10.value=f.b11.value;
+	  f.b11.value=" ";
+  }
+    if(f.b12.value==" ")
+  {
+	  f.b12.value=f.b11.value;
+	  f.b11.value=" ";
+	  }
+}
+else if(v==12){
+	if(f.b8.value==" ")
+	{
+		f.b8.value=f.b12.value;
+		f.b12.value=" ";
+	}
+	if(f.b11.value==" ")
+	{
+		f.b11.value=f.b12.value;
+		f.b12.value=" ";
+	}
+	if(f.b16.value==" "){
+      f.b16.value=f.b12.value;
+	  f.b12.value=" ";
+  }
+  
+}
+else if(v==13)
+{
+	if(f.b9.value==" ")
+	{
+		f.b9.value=f.b13.value;
+		f.b13.value=" ";
+	}
+	if(f.b14.value==" ")
+	{
+		f.b14.value=f.b13.value;
+		f.b13.value=" ";
+	}
+	}
+	else if(v==14)
+{
+	if(f.b10.value==" ")
+	{
+		f.b10.value=f.b14.value;
+		f.b14.value=" ";
+	}
+	if(f.b13.value==" ")
+	{
+		f.b13.value=f.b14.value;
+		f.b14.value=" ";
+	}
+	if(f.b15.value==" ")
+	{
+		f.b15.value=f.b14.value;
+		f.b14.value=" ";
+	}
+	}
+	else if(v==15)
+{
+	if(f.b11.value==" ")
+	{
+		f.b11.value=f.b15.value;
+		f.b15.value=" ";
+	}
+	if(f.b14.value==" ")
+	{
+		f.b14.value=f.b15.value;
+		f.b15.value=" ";
+	}
+	if(f.b16.value==" ")
+	{
+		f.b16.value=f.b15.value;
+		f.b15.value=" ";
+	}
+	}
+	else if(v==16)
+{
+	if(f.b12.value==" ")
+	{
+		f.b12.value=f.b16.value;
+		f.b16.value=" ";
+	}
+	if(f.b15.value==" ")
+	{
+		f.b15.value=f.b16.value;
+		f.b16.value=" ";
+	}
+	
+	}
+  }
+
+</SCRIPT>
+</head>
+
+<body>
+<center>
+<div id="time"></div>
+<h1>NUMBER PUZZLE</h1>
+<form name="f" id="f">
+<table border="10" bgcolor="#CCCCCC">
+<tr>
+         <td><input type="button" value="1" name="b1" onclick="cube(1)" /></td>
+		   <td><input type="button" value="2" name="b2" onclick="cube(2)" /></td>
+		            <td><input type="button" value="3" name="b3" onclick="cube(3)" /></td>
+					          <td><input type="button" value="4" name="b4" onclick="cube(4)" /></td> </tr>
+							  <tr>
+  <td><input type="button" value="5" name="b5" onclick="cube(5)" /></td>
+           <td><input type="button" value="6" name="b6" onclick="cube(6)" /></td>
+		            <td><input type="button" value="7" name="b7" onclick="cube(7)" /></td>
+					          <td><input type="button" value="8" name="b8" onclick="cube(8)" /></td> </tr>
+							  <tr>
+  <td><input type="button" value="9" name="b9" onclick="cube(9)" /></td>
+           <td><input type="button" value="10" name="b10" onclick="cube(10)" /></td>
+		            <td><input type="button" value="11" name="b11" onclick="cube(11)" /></td>
+					          <td><input type="button" value="12" name="b12" onclick="cube(12)" /></td> </tr>
+							  <tr>
+  <td><input type="button" value="13" name="b13" onclick="cube(13)" /></td>
+           <td><input type="button" value="14" name="b14" onclick="cube(14)" /></td>
+		            <td><input type="button" value="15" name="b15" onclick="cube(15)" /></td>
+					          <td><input type="button" value=" " name="b16" onclick="cube(16 )" /></td> </tr>
+<tr>
+	<td colspan="4"><input type="button" value="Puzzle" onClick="puzzle_me()" id="puz" name="puz"/></td>
+</tr>
+</table>
+
+</form> </center>
+</body>
+</html>

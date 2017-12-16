@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+	function myvalidate()
+	{
+		var t=f.t1.value;
+		//var t1=document.getElementById("t1").value;
+	if(t.length<3)
+		{
+		document.getElementById("error").innerHTML="Please Enter Valid name";
+		}
+		var i=f.city.selectedIndex;
+		alert(f.city[i].value);
+		return false;
+	}
+	</script>
+</head>
+
+<body>
+<form name="f" method="post" action="abc.php" onSubmit="return myvalidate()">
+	<input type="text"  name="t1" id="t1" required/>
+	<div id="error" style="color: red;"></div>
+	<select name="city" required>
+		<option value="">Select</option>
+		<option value="lucknow">Lucknow</option>
+		<option value="kanpur">Kanpur</option>
+		<option value="indore">Indore</option>
+	</select><br/>
+	<input type="submit" value="Send"/>
+</form>
+</body>
+</html>

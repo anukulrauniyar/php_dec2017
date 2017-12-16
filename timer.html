@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+	var h=0,m=0,s=0,t=0,x;
+	function show()
+	{
+		if(s>59)
+			{
+				m=m+1;
+				s=0;
+			}
+		if(m>59)
+			{
+				h=h+1;
+				m=0;
+			}
+	  document.getElementById("time").innerHTML=h+":"+m+":"+s;	
+		s=s+1;
+	}
+	function start()
+	{
+		t=setInterval("show()",100);
+	}
+	function stop()
+	{
+		clearInterval(t);
+		s=0;
+		m=0;
+		h=0;
+		
+	}
+	function mywin()
+	{
+	x=window.open("","Display","toolbar=0,menubar=0,statusbar=0,location=no,scrollbars=1,resizable=1,height=360,width=520");
+		x.document.write("window will b close within 5 second");
+   		setTimeout("abc()",5000);
+	}
+	function abc()
+	{
+		x.close();
+	}
+	</script>
+</head>
+
+<body onLoad="mywin()">
+<input type="button" value="Start" name="start" onClick="start()"/>
+<input type="button" value="Stop" name="stop" onClick="stop()"/>
+<div id="time">
+	
+</div>
+
+</body>
+</html>
