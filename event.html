@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+	function myevent()
+	{
+		document.getElementById("data").style.color="red";
+	}
+	function myevent1()
+	{
+		document.getElementById("data").style.color="blue";
+	}
+	function changeme()
+	{
+		document.getElementById("niit").style.fontSize="36px";
+	}
+	function changeme1()
+	{
+		document.getElementById("niit").style.fontSize="16px";
+	}
+	function show(n)
+	{
+	   var s="";
+	if(n==1)
+		s="Please Enter Your Name";
+	else
+		s="Please Enter Your Address";
+		document.getElementById("data").innerHTML=s;
+	}
+	function upr()
+	{
+		var c=document.getElementById("t1").value;
+		document.getElementById("t1").value=c.toUpperCase();
+	}
+	</script>
+</head>
+
+<body>
+<div id="niit" onMouseOver="changeme()" onMouseOut="changeme1()">
+	NIIT SAPRUMARG
+	6B SAS HOUSE SAPRUMARG
+	LUCKNOW
+</div>
+<div id="data">
+	this is my first Page
+</div>
+<input type="button" onMouseOver="myevent()"
+onMouseOut="myevent1()" value="NIIT"/>
+<input type="text" onFocus="show(1)" onKeyUp="upr()" id="t1">
+<input type="text" onFocus="show(2)">
+</body>
+</html>

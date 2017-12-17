@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+function show(event)
+	{
+		var x=event.clientX;
+		var y=event.clientY;
+		document.getElementById("niit").innerHTML=
+			"x="+x+";Y="+y;
+		document.getElementById("btn").style.top=x;
+		document.getElementById("btn").style.left=y;
+		
+	}
+function move(event)
+	{
+		var x=event.clientX;
+		var y=event.clientY;
+		
+	}
+
+	</script>
+</head>
+<body>
+
+<div id="niit" style="height: 200px;width: 200px;top:50px;left: 50px;background-color: pink" onMouseMove="show(event)">
+
+<input type="button" value="ClickMe" id="btn" />
+</div>
+
+</body>
+</html>

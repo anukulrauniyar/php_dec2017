@@ -14,6 +14,13 @@
 		}
 		var i=f.city.selectedIndex;
 		alert(f.city[i].value);
+		var g=f.r1.value;
+		alert("Radio="+g);
+		var c=f.c1.value;
+		alert("CheckBox="+c);
+		var a=f.address.value;
+		alert("textarea="+a);
+		
 		return false;
 	}
 	</script>
@@ -29,6 +36,15 @@
 		<option value="kanpur">Kanpur</option>
 		<option value="indore">Indore</option>
 	</select><br/>
+	<br/>
+	<input name="c1" type="checkbox" value="PHP" checked>PHP<br/>
+	<input name="c2" type="checkbox" value="JAVA" >JAVA<br/>
+	<input type="radio" name="r1" value="Male">Male
+	<input type="radio" name="r1" value="Female">FeMale
+	<br/>
+	<textarea rows="6" cols="60" name="address">
+		
+	</textarea>
 	<input type="submit" value="Send"/>
 </form>
 </body>
