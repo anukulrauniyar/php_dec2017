@@ -1,0 +1,73 @@
+CREATE DATABASE LIB;
+SHOW DATABASES;
+USE LIB;
+
+CREATE TABLE member(
+mem_id int primary key auto_increment,
+mem_name varchar(200)not null,
+mem_mobile varchar(10),
+mem_email varchar(200)not null,
+gendar varchar(10) default 'Male',
+reg_date datetime not null
+);
+select * from member;
+select mem_id,mem_mobile from member;
+
+/*insert into member(field)values(data);*/
+insert into member(mem_name,mem_mobile,mem_email,gendar,reg_date)
+values('Ram kumar verma','12345677','abc@gmail.com','male','2017-12-31');
+
+insert into member(mem_name,mem_mobile,mem_email,reg_date)
+values('Ram kumar verma','12345677','abc@gmail.com','2017-12-31');
+select sysdate();
+
+use niitlffs_pacex;
+select * from reg1;
+describe reg1;
+
+select * from reg1 where src_icd='11103';
+select * from reg1 where src_icd='11103' or src_icd='11631';
+select * from reg1 where src_icd in('11103','11631');
+select * from reg1 where src_icd not in('11103','11631');
+select * from reg1 where src_icd not in('11103','11631')
+and crs_cd='GNIIT' order by stdnt_nm desc;
+
+select crs_cd,count(*) from reg1 group by crs_cd
+HAVING count(*)>100 order by crs_CD;
+
+select crs_cd,count(*) from reg1 group by crs_cd
+HAVING count(*)>100 order by crs_CD;
+
+select year(rgstrtn_dt),month(rgstrtn_dt),crs_cd, count(*) from reg1
+group by year(rgstrtn_dt),month(rgstrtn_dt),crs_cd;
+use lib;
+create table country(country_id int primary key auto_increment,
+country_name varchar(20));
+insert into country(country_name)values('JAPANA');
+SELECT * from country;
+drop table state;
+create table state(state_id int auto_increment primary key,
+state_name varchar(20),country_id int,
+foreign key(country_id) references  country(country_id)
+on update cascade
+on delete cascade
+);
+insert into state(state_name,country_id)values('BIHAR',1);
+SELECT * FROM state;
+SELECT * FROM COUNTRY;
+SELECT STATE_NAME,COUNTRY_NAME FROM STATE,COUNTRY
+WHERE STATE.COUNTRY_ID=COUNTRY.COUNTRY_ID;
+
+SELECT STATE_NAME,COUNTRY_NAME FROM STATE S,COUNTRY C
+WHERE S.COUNTRY_ID=C.COUNTRY_ID;
+SELECT STATE_NAME,COUNTRY_NAME FROM STATE S JOIN COUNTRY C
+ON S.COUNTRY_ID=C.COUNTRY_ID;
+
+SELECT STATE_NAME,COUNTRY_NAME FROM STATE S JOIN COUNTRY C
+USING(COUNTRY_ID);
+
+SELECT STATE_NAME,COUNTRY_NAME FROM STATE S RIGHT OUTER JOIN COUNTRY C
+USING(COUNTRY_ID);
+
+SELECT STATE_NAME,COUNTRY_NAME FROM COUNTRY  LEFT OUTER JOIN STATE
+USING(COUNTRY_ID);
